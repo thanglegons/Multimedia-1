@@ -56,17 +56,3 @@ class PrefixCodeTree:
 
         return ''.join(decoded_data)
 
-
-if __name__ == '__main__':
-    codebook = {
-        'x1': [0],
-        'x2': [1, 0, 0],
-        'x3': [1, 0, 1],
-        'x4': [1, 1]
-    }
-    codeTree = PrefixCodeTree()
-    for _symbol, _codeword in codebook.items():
-        codeTree.insert(_codeword, _symbol)
-    for _len in range(25):
-        print(_len)
-        print(codeTree.decode(b'\xd2\x9f\x20', _len))
